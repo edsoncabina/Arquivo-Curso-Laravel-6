@@ -10,6 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::delete('products/{id}','ProductController@destroy')->name('products.destroy');
+Route::put('products/{id}','ProductController@update')->name('products.update');
+Route::get('products/{id}/edit','ProductController@edit')->name('products.edit');
+Route::get('products/create','ProductController@create')->name('products.create');
+Route::post('products','ProductController@strore')->name('products.strore');
+Route::get('products/{id}','ProductController@show')->name('products.show');
+Route::get('products','ProductController@index')->name('products.index');
+
 /* Grupos de Rotas */
 Route::get('/login',function(){
     return 'Login';
