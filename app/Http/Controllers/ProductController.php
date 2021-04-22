@@ -10,8 +10,10 @@ class ProductController extends Controller
 
     public function __construct(Request $request)
     {
-        die($request->nome);
-        dd($request);
+        //die($request->nome);
+        //dd($request);
+        //$this->middleware('auth');
+        $this->middleware('auth')->only('create');
         $this->request = $request;
     }
     /**
