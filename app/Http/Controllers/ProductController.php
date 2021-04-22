@@ -6,6 +6,14 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private $request;
+
+    public function __construct(Request $request)
+    {
+        die($request->nome);
+        dd($request);
+        $this->request = $request;
+    }
     /**
      * Display a listing of the resource.
      *
