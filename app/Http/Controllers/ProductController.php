@@ -32,8 +32,10 @@ class ProductController extends Controller
         $teste = '<h2>Imprimir Tags na View</h2';
         return view('teste', \compact('nome','idade','teste'));
          */
-        $teste = '<h2>Imprimir Tags na View</h2';
-        return view('admin.pages.products.index', compact('teste'));
+        $teste = 'Conteu de Teste';
+        $valor = 1234;
+        $vector = [];
+        return view('admin.pages.products.index', compact('teste','valor','vector'));
     }
 
     /**
