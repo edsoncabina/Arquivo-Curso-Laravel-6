@@ -15,7 +15,7 @@ class ProductController extends Controller
         //$this->middleware('auth');
         //$this->middleware('auth')->only('create');
         //$this->middleware('auth')->only(['create','index']);
-        $this->middleware('auth')->except('create');
+        //$this->middleware('auth')->except('create');
         $this->request = $request;
     }
     /**
@@ -25,7 +25,15 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return 'Funcao de Listagem de produtos';
+        //return 'Funcao de Listagem de produtos';
+        //return view('teste', ['nome' => 'Edson Francisco Cabina']);
+        /*   $nome = 'Edson Francisco Cabina';
+        $idade = 25;
+        $teste = '<h2>Imprimir Tags na View</h2';
+        return view('teste', \compact('nome','idade','teste'));
+         */
+        $teste = '<h2>Imprimir Tags na View</h2';
+        return view('admin.pages.products.index', compact('teste'));
     }
 
     /**
