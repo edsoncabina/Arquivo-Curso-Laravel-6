@@ -11,7 +11,7 @@
 |
 */
  Route::Resource('produts','ProductController');
- //->middleware('auth')
+ //->middleware('auth');
 /*
 Route::delete('products/{id}','ProductController@destroy')->name('products.destroy');
 Route::put('products/{id}','ProductController@update')->name('products.update');

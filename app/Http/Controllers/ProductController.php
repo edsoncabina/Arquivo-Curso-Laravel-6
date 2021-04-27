@@ -13,7 +13,9 @@ class ProductController extends Controller
         //die($request->nome);
         //dd($request);
         //$this->middleware('auth');
-        $this->middleware('auth')->only('create');
+        //$this->middleware('auth')->only('create');
+        //$this->middleware('auth')->only(['create','index']);
+        $this->middleware('auth')->except('create');
         $this->request = $request;
     }
     /**
