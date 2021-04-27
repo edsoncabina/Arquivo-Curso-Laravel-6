@@ -35,9 +35,9 @@ class ProductController extends Controller
         $teste = 'Conteu de Teste';
         $valor = 1234;
         $vector = [];
-        $vector2 = [1,2,3,4,5];
-        $products = ['Forno','Cadeirão','Computador','Plasma'];
-        return view('admin.pages.products.index', compact('teste','valor','vector','vector2','products'));
+        $vector2 = [1, 2, 3, 4, 5];
+        $products = ['Forno', 'Cadeirão', 'Computador', 'Plasma'];
+        return view('admin.pages.products.index', compact('teste', 'valor', 'vector', 'vector2', 'products'));
     }
 
     /**
@@ -47,7 +47,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pages.products.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('Cadastrando...');
     }
 
     /**
