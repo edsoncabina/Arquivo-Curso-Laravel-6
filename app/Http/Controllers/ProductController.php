@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateProductRequest;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -53,11 +54,17 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  App\Http\Requests\StoreUpdateProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUpdateProductRequest $request)
     {
+       /*  $request->validate([
+            'description' => 'required|unique:posts|max:255',
+            'name' => 'required',
+            'photo' => 'required|image',
+        ]);
+        dd('Ok'); */
         //dd('Cadastrando...');
         //dd($request->all());
         //dd($request->only(['name','description']));
