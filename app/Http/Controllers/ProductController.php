@@ -58,7 +58,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd('Cadastrando...');
+        //dd('Cadastrando...');
+        //dd($request->all());
+        //dd($request->only(['name','description']));
+        //dd($request->description);
+        //dd($request->has('description'));
+        //dd($request->input('description1','Valor default'));
+        //dd($request->except('description'));
+        if ($request->file('photo')->isValid()) {
+            //dd($request->photo);
+            //dd($request->photo->extension());
+            //dd($request->photo->getClientOriginalName());
+            //dd($request->file('photo')->isValid());
+            //dd($request->file('photo')->store('products'));
+            $nomeArquivo = $request->name.'.'.$request->photo->extension();
+            dd($request->file('photo')->storeAs('products',$nomeArquivo));
+        }
     }
 
     /**
@@ -80,7 +95,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.pages.products.edit',compact('id'));
+        return view('admin.pages.products.edit', compact('id'));
     }
 
     /**
