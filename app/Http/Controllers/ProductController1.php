@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUpdateProductRequest;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ProductController extends Controller1
 {
     private $request;
 
@@ -27,12 +26,19 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //$products = Product::all();
-        $products = Product::paginate(); // Por default retorna 15 linhas por pagina.
-
-        return view('admin.pages.products.index', [
-            'products' => $products
-        ]);
+        //return 'Funcao de Listagem de produtos';
+        //return view('teste', ['nome' => 'Edson Francisco Cabina']);
+        /*   $nome = 'Edson Francisco Cabina';
+        $idade = 25;
+        $teste = '<h2>Imprimir Tags na View</h2';
+        return view('teste', \compact('nome','idade','teste'));
+         */
+        $teste = 'Conteu de Teste';
+        $valor = 1234;
+        $vector = [];
+        $vector2 = [1, 2, 3, 4, 5];
+        $products = ['Forno', 'Cadeirão', 'Computador', 'Plasma'];
+        return view('admin.pages.products.index', compact('teste', 'valor', 'vector', 'vector2', 'products'));
     }
 
     /**

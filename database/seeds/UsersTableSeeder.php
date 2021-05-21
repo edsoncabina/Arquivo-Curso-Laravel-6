@@ -12,10 +12,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(User::class, 10)->create(); //Gerar 10 ocorrencia na Base de dados 
+        /*
         User::create([
             "name" => "Carlos Ferreira",
             "email" => "carlos@especializati.co.br",
             "password" => bcrypt('12345678'),
             ]);
+            */
     }
 }
